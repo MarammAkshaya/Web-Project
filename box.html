@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertical Expandable Boxes</title>
+ 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .box {
+      width: 341px;
+      height: 100px;
+      border: 2px solid #C8C8C8;
+      background-color: transparent;
+      border-radius: 8px;
+      transition: height 0.4s ease, border-color 0.4s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .box.expanded {
+      height: 174px;
+      border: 2px solid #FF6B82;
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .heading .line {
+      flex: 1;
+      height: 1px;
+      background-color: #C8C8C8;
+    }
+
+    .heading h2 {
+      margin: 0;
+      width: 143px;
+      height: 24px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      color: #FF6B82;
+      white-space: nowrap;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 341px;
+      margin-top: 10px;
+      padding: 0 10px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer .delivery {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      width: 89px;
+      height: 17px;
+      color: #FF6B82;
+    }
+
+    .footer .total {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      width: 124px;
+      height: 17px;
+      color: #000;
+    }
+    .add-to-cart {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-to-cart button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background-color: #FF6B82;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  width: 342px;
+  height:40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart button:hover {
+  background-color: #e55c74;
+}
+
+.add-to-cart svg {
+  stroke: white;
+}
+.box-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  height: 100%;
+}
+
+.radio-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.radio-area input[type="radio"] {
+  accent-color: #FF6B82;
+  width: 16px;
+  height: 16px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details .left,
+.details .right {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.details .right {
+  text-align: right;
+}
+.box-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  height: 100%;
+}
+
+.radio-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.radio-area input[type="radio"] {
+  accent-color: #FF6B82;
+  width: 16px;
+  height: 16px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details .left,
+.details .right {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.details .right {
+  text-align: right;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="heading">
+      <div class="line"></div>
+      <h2>YAY! It's BOGO</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="box"><div class="box-content">
+        <div class="radio-area">
+          <input type="radio" name="product" />
+        </div>
+        <div class="details" style="flex: 1; justify-content: space-between; flex-direction: row;">
+          <div class="left">1 Unit<br><span style="font-size: 12px; font-weight: 400;">Standard Price</span></div>
+          <div class="right">$10.00 USD</div>
+        </div>
+      </div></div>
+    <div class="box"><div class="box-content">
+        <div class="radio-area">
+          <input type="radio" name="product" />
+        </div>
+        <div class="details" style="flex: 1; justify-content: space-between; flex-direction: row;">
+          <div class="left">2 Unit<br><span style="font-size: 12px; font-weight: 400;">Standard Price</span></div>
+          <div class="right">$18.00 USD</div>
+        </div>
+      </div></div>
+    <div class="box"><div class="box-content">
+        <div class="radio-area">
+          <input type="radio" name="product" />
+        </div>
+        <div class="details" style="flex: 1; justify-content: space-between; flex-direction: row;">
+          <div class="left">3 Unit<br><span style="font-size: 12px; font-weight: 400;">Standard Price</span></div>
+          <div class="right">$24.00 USD</div>
+        </div>
+      </div></div>
+
+    <!-- ✅ New Footer Section -->
+    <div class="footer">
+      <div class="delivery">Free Delivery</div>
+      <div class="total">Total : $18.00 USD</div>
+    </div>
+    <div class="add-to-cart">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          Add to Cart
+        </button>
+      </div>
+  </div>
+  
+  <script>
+    // const boxes = document.querySelectorAll('.box');
+    // boxes.forEach((box) => {
+    //   box.addEventListener('click', () => {
+    //     boxes.forEach((b) => b.classList.remove('expanded'));
+    //     box.classList.add('expanded');
+    //   });
+    // });
+    const boxes = document.querySelectorAll('.box');
+
+boxes.forEach((box) => {
+  box.addEventListener('click', () => {
+    boxes.forEach((b) => {
+      b.classList.remove('expanded');
+      b.querySelector('input[type="radio"]').checked = false;
+    });
+    box.classList.add('expanded');
+    box.querySelector('input[type="radio"]').checked = true;
+  });
+});
+
+  </script>
+
+</body>
+</html>
